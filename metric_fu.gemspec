@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     s.add_dependency("simplecov", [">= 0.5.4"])
     s.add_dependency("fattr", [">= 2.2.1"])
     s.add_dependency("arrayfields", [">= 4.7.4"])
+    s.add_dependency("map", [">= 5.2.0"])
   end
   s.add_dependency("reek", [">=1.2.6"])
   s.add_dependency("roodi", [">=2.1.0"])
