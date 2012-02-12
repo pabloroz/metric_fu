@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency("simplecov", [">= 0.5.4"])
   end
+  s.add_dependency("fattr", [">= 2.2.1"])
   s.add_dependency("reek", [">=1.2.6"])
   s.add_dependency("roodi", [">=2.1.0"])
   s.add_dependency("rails_best_practices", [">=0.6.4"])
