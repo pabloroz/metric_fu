@@ -16,7 +16,12 @@ Gem::Specification.new do |s|
 
   s.add_dependency("flay", [">= 1.2.1"])
   s.add_dependency("flog", [">= 2.3.0"])
-  s.add_dependency("rcov", [">= 0.8.3.3"])
+
+  if RUBY_VERSION < "1.9"
+    s.add_dependency("rcov", [">= 0.8.3.3"])
+  else
+    s.add_dependency("simplecov", [">= 0.5.4"])
+  end
   s.add_dependency("reek", [">=1.2.6"])
   s.add_dependency("roodi", [">=2.1.0"])
   s.add_dependency("rails_best_practices", [">=0.6.4"])
