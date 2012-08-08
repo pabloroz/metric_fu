@@ -5,13 +5,16 @@ module MetricFu
   # These are metrics which have been developed for the system.  Of
   # course, in order to use these metrics, their respective gems must
   # be installed on the system.
-  AVAILABLE_METRICS = [:churn, :flog, :flay, :reek,
-                       :roodi, :rcov,
-                      :hotspots]
+  AVAILABLE_METRICS = [:churn, :reek, :roodi, :rcov, :hotspots]
+  AVAILABLE_GRAPHS = [:reek, :roodi, :rcov, :rails_best_practices]
 
-  AVAILABLE_METRICS << :saikuro unless RUBY_VERSION == '1.9.2'
+  unless RUBY_VERSION == '1.9.2' then
+    [:saikuro, :flog, :flay].each do |metric|
+      AVAILABLE_METRICS << metric
+      AVAILABLE_METRICS << metric
+    end
+  end
 
-  AVAILABLE_GRAPHS = [:flog, :flay, :reek, :roodi, :rcov, :rails_best_practices]
   AVAILABLE_GRAPH_ENGINES = [:gchart, :bluff]
 
   # The @@configuration class variable holds a global type configuration
@@ -158,7 +161,7 @@ module MetricFu
     #
     # @todo  This should probably be made a bit more robust.
     def rails?
-      @rails = File.exist?("config/environment.rb")
+      @rails = File.exist?("./config/environment.rb")
     end
 
     # Add the :stats task to the AVAILABLE_METRICS constant if we're
@@ -172,7 +175,7 @@ module MetricFu
     end
 
     def set_graphs
-      if rails?
+      if rails? then
         @graphs = MetricFu::AVAILABLE_GRAPHS + [:stats]
       else
         @graphs = MetricFu::AVAILABLE_GRAPHS
