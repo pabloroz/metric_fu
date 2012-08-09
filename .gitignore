@@ -6,3 +6,4 @@ tmp/*
 scratch_directory/
 *swp
 tags
+Gemfile.lock
