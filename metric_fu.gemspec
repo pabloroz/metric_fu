@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.email       = "jake.scruggs@gmail.com"
   s.homepage    = "http://metric-fu.rubyforge.org/"
   s.description = "Code metrics from Flog, Flay, RCov, Saikuro, Churn, Reek, Roodi, Rails' stats task and Rails Best Practices"
-  s.authors     = ["Jake Scruggs", "Sean Soper", "Andre Arko", "Petrik de Heus", "Grant McInnes", "Nick Quaranto", "Édouard Brière", "Carl Youngblood", "Richard Huang", "Dan Mayer", "Runar Ingebrigtsen"]
+  s.authors     = ["Jake Scruggs"]
 
   s.files = ["README","HISTORY","TODO","MIT-LICENSE","Rakefile"]
 
